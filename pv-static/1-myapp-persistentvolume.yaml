@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: myserver-myapp-static-pv
+  namespace: myserver
+spec:
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteOnce
+  nfs:
+    path: /data/k8sdata/myserver/myappdata
+    server: 172.31.7.109
