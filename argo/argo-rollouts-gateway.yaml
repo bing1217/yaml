@@ -1,0 +1,22 @@
+apiVersion: networking.istio.io/v1beta1
+kind: Gateway
+metadata:
+  name: argo-rollouts-gateway
+  namespace: argo-rollouts
+
+spec:
+  selector:
+    istio: ingressgateway
+
+  servers:
+  - port:
+      number: 443
+      name: https
+      protocol: HTTPS
+
+    tls:
+      mode: SIMPLE
+      credentialName: wildcard-liubingjie-tls
+
+    hosts:
+    - rollout.liubingjie.com

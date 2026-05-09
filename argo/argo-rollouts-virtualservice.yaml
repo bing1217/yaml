@@ -1,0 +1,19 @@
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: argo-rollouts-vs
+  namespace: argo-rollouts
+
+spec:
+  hosts:
+  - rollout.liubingjie.com
+
+  gateways:
+  - aargo-rollouts/argo-rollouts-gateway
+
+  http:
+  - route:
+    - destination:
+        host: argo-rollouts-dashboard.argo-rollouts.svc.cluster.local
+        port:
+          number: 3100
