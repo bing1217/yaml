@@ -1,4 +1,5 @@
 # yaml
+```
 [root@localhost bin]# ./istioctl proxy-config routes deploy/istio-ingressgateway -n istio-system
 NAME                                                    VHOST NAME                       DOMAINS                       MATCH                  VIRTUAL SERVICE
 http.8080                                               *:80                             *                             /*                     bookinfo.default
@@ -11,6 +12,6 @@ http.8080                                               skywalking.liubingjie.co
 http.8080                                               tracing.liubingjie.com:80        tracing.liubingjie.com        /*                     tracing-virtualservice.istio-system
 https.443.https.argocd-gateway.argocd                   argocd.liubingjie.com:443        argocd.liubingjie.com         /*                     argocd-vs.argocd
 https.443.https.argo-rollouts-gateway.argo-rollouts     rollout.liubingjie.com:443       rollout.liubingjie.com        /*                     argo-rollouts-vs.argo-rollouts
-                                                        backend                          *                             /healthz/ready*        
-                                                        backend                          *                             /stats/prometheus*     
-
+                                                        backend                          *                             /healthz/ready*
+                                                        backend                          *                             /stats/prometheus*
+```
